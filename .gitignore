@@ -1,5 +1,24 @@
 node_modules/
 .env
+.env.*
+!.env.example
 npm-debug.log*
 .DS_Store
 .claude/
+
+# Uploaded/generated images and temp files (app uses in-memory storage,
+# but ignore defensively in case disk storage is ever added)
+uploads/
+tmp/
+temp/
+*.tmp
+
+# Logs
+logs/
+*.log
+
+# Local test artifacts
+test-*.jpg
+test-*.jpeg
+test-*.png
+test-*.webp
