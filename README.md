@@ -1,5 +1,7 @@
 # Smart Object Identifier
 
+https://smart-object-identifier.onrender.com/
+
 A full-stack web app that identifies objects in a photo. Upload or drag & drop
 an image, and the app returns the detected objects with confidence
 percentages, powered by the free [Hugging Face Inference API](https://huggingface.co/inference-api)
