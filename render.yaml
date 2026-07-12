@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: smart-object-identifier
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: HUGGINGFACE_API_KEY
+        sync: false
+      - key: HUGGINGFACE_MODEL
+        value: facebook/detr-resnet-50
+      - key: NODE_VERSION
+        value: 20.11.1

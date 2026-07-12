@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Smart Object Identifier</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="app-header">
+      <h1>Smart Object Identifier</h1>
+      <p>Upload a photo and let AI tell you what's in it.</p>
+    </header>
+
+    <main>
+      <!-- Drag & drop / click-to-browse upload zone -->
+      <section id="drop-zone" class="drop-zone">
+        <input type="file" id="file-input" accept="image/jpeg,image/png,image/webp" hidden />
+        <div class="drop-zone-content">
+          <svg class="upload-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M12 16V4M12 4L7 9M12 4L17 9" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M4 16V18C4 19.1046 4.89543 20 6 20H18C19.1046 20 20 19.1046 20 18V16" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <p><strong>Drag & drop</strong> an image here, or <span class="browse-link">browse</span></p>
+          <p class="hint">JPEG, PNG, or WebP — up to 5MB</p>
+        </div>
+      </section>
+
+      <!-- Preview + results -->
+      <section id="result-section" class="result-section hidden">
+        <div class="preview-card">
+          <img id="preview-image" alt="Uploaded preview" />
+          <button id="reset-btn" class="reset-btn" type="button">Try another image</button>
+        </div>
+
+        <div class="results-card">
+          <div id="loading" class="loading hidden">
+            <div class="spinner"></div>
+            <p>Analyzing image...</p>
+          </div>
+
+          <div id="error-box" class="error-box hidden"></div>
+
+          <div id="objects-list" class="objects-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="app-footer">
+      <p>Powered by the Hugging Face Inference API (facebook/detr-resnet-50)</p>
+    </footer>
+  </div>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
